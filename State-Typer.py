@@ -9,8 +9,6 @@ while remainingStates > 0:
 
 	# Checks the state list file to see if the user input matches any of the states listed
 	for state in statelist:
-		if text.lower() == "canada":
-			remainingStates = 0
 		if text.lower() in state and text.lower() not in usedStates:
 			stateFound = True
 			remainingStates -= 1
@@ -24,7 +22,7 @@ while remainingStates > 0:
 		print("Correct\n")
 		print("There are " + str(remainingStates) + " states left.\n")
 		stateFound = False
-	elif stateFound == False and state in statelist:
+	elif stateFound == False and text.lower() not in usedStates:
 		print("Sorry, " + text + " is not recognized as a state.\n")
 
 print("Congratulations! That's all the states!")
