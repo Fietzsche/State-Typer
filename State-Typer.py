@@ -9,7 +9,7 @@ while remainingStates > 0:
 
 	# Checks the state list file to see if the user input matches any of the states listed
 	for state in statelist:
-		if text.lower() in state and text.lower() not in usedStates:
+		if text.lower() in state and text.lower() not in usedStates and len(text + "\n") is len(state):
 			stateFound = True
 			remainingStates -= 1
 			usedStates.append(text.lower())
